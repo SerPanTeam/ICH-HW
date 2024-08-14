@@ -60,6 +60,10 @@ button:hover {
     gap: 10px;
 }
 
+.post:first-child .id::after{
+    content: " (последняя)";
+}
+
 .id {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
