@@ -1,0 +1,30 @@
+.post {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+}
+
+.id {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: start;
+    justify-self: start;
+    background-color: blanchedalmond;
+    padding: 0 5px;
+}
+.date {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: start;
+    justify-self: end;
+    background-color: aquamarine;
+    padding: 0 5px;
+}
+.text {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
