@@ -1,3 +1,5 @@
+renderPosts();
+
 function sendPost(event) {
   event.preventDefault();
   const postText = document.querySelector("#textPost");
@@ -13,7 +15,12 @@ function sendPost(event) {
 }
 
 function renderPosts() {
-
+  let posts = [];
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    if (localStorage.key(i).startsWith('post-'))
+      posts.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+  }
+  posts.sort((a, b) => a.id - b.id).forEach(val => showPost(val))
 }
 
 function showPost(post) {
@@ -27,11 +34,12 @@ function showPost(post) {
   const postDate = document.createElement("div");
   postDate.classList.add("date");
   postDate.textContent = post.date;
-  
+
   const postID = document.createElement("div");
   postID.classList.add("id");
   postID.textContent = post.id;
 
-  document.body.appendChild(postContainer).append(postText, postDate, postID);
+  postContainer.append(postText, postDate, postID);
+  document.body.querySelector("#postContainer").prepend(postContainer);
 
 }
