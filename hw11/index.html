@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        border: 1px solid;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+      }
+      #formMsg {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="login">Login:</label>
+        <input type="text" id="login" required placeholder="admin" />
+      </div>
+      <div>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" required placeholder="1234" />
+      </div>
+      <p id="formMsg">Login or password is wrong.</p>
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      let userName = "admin";
+      let userPass = "1234";
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formName = document.querySelector("#login");
+        const formPass = document.querySelector("#pass");
+        const formMsg = document.querySelector("#formMsg");
+
+        if (userName === formName.value && userPass === formPass.value) {
+          form.style.display = "none";
+          document.body.innerHTML = "<h3>Loading...</h3>";
+        } else {
+          formMsg.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
