@@ -1,0 +1,18 @@
+.container {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+}
+
+.container__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки, каждая занимает половину ширины */
+    gap: 10px;
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 4px;
+}
+.container__item > :nth-child(2n) {
+    justify-self: end; /* Выровнять элементы второй колонки вправо */
+}
