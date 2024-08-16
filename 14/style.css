@@ -5,7 +5,13 @@ button{
     border-radius: 4px;
     border: 1px solid;
     padding: 2px 10px;
+    font-size: 1em;
 }
+
+input{
+    box-shadow: none;
+}
+
 
 .container{
     width: 100%;
@@ -17,8 +23,6 @@ button{
 
 .form__login{
     padding: 10px;
-    border: 1px solid;
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -32,5 +36,9 @@ button{
     gap: 10px;
     width: 100%;
 }
-
-
+#error{
+    color: red;
+    padding: 0;
+    margin: 0;
+    display: none;
+}

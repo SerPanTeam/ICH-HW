@@ -14,22 +14,24 @@
 
     <div class="container">
         <form action="" class="form__login">
-            <fieldset>
-            <legend>Авторизация</legend>
-            <div class="form__login__section">
-                <label for="">Логин</label>
-                <input type="text" class="form__login__input" id="loginField">
-            </div>
-            <div class="form__login__section">
-                <label for="">Пароль</label>
-                <input type="password" name="" id="passwordField">
-            </div>
-            <div class="form__login__section">
-
-                <button type="submit">Войти</button>
-                <button type="reset">Сброс</button>
-            </div>
-        </fieldset>
+            <fieldset class="form__login">
+                <legend>Авторизация</legend>
+                <div class="form__login__section">
+                    <label for="">Логин</label>
+                    <input type="text" class="form__login__input" id="loginField">
+                </div>
+                <div class="form__login__section">
+                    <label for="">Пароль</label>
+                    <input type="password" name="" id="passwordField">
+                </div>
+                <div class="form__login__section">
+                    
+                    <button type="submit" id="loginBtn">Войти</button>
+                    <button type="reset">Сброс</button>
+                </div>
+                <p id="error">Неверный Логин или Пароль!</p>
+                <a href="reg.html">Регистрация</a>
+            </fieldset>
         </form>
     </div>
 
