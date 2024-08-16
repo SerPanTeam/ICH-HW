@@ -24,7 +24,7 @@ if (btnRegistr)
 
         const validations = [
             (checkValue({ field: 'loginField', min: 2, max: 10, onlyLetter: true })),
-            (checkValue({ field: 'passwordField', min: 5, max: 26, onlyLetter: true })),
+            (checkValue({ field: 'passwordField', min: 5, max: 26})),
             (checkValue({ field: 'nameField', min: 2, max: 24, onlyLetter: true })),
             (checkValue({ field: 'emailField', min: 2, requiredSymbol: '@' })),
             (checkValue({ field: 'telField', min: 8, max: 12, onlyDigit: true, requiredSymbol: '+', positionOfRequiredSymbol: 0 }))
