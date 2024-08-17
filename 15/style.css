@@ -1,18 +1,119 @@
+/* Основной контейнер для всех карточек */
 .container {
-    border: 1px solid;
-    border-radius: 4px;
-    padding: 10px;
-    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Колонки адаптируются под размер экрана */
+    gap: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Индивидуальные карточки */
 .container__item {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Две колонки, каждая занимает половину ширины */
-    gap: 10px;
-    border: 1px solid;
-    padding: 4px;
-    border-radius: 4px;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    grid-template-rows: auto 120px auto auto auto; /* Пять строк: добавлена строка для фото */
+    gap: 10px 20px; /* Вертикальный и горизонтальный промежуток */
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    align-items: start; /* Выравнивание по верху */
 }
-.container__item > :nth-child(2n) {
-    justify-self: end; /* Выровнять элементы второй колонки вправо */
+
+/* Эффект при наведении на карточку */
+.container__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для первой строки: id и username */
+.container__item .id {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+.container__item .username {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Выровнять текст по правому краю */
+    text-align: right; /* Выравнивание текста внутри элемента */
+}
+
+/* Стили для строки с city и company */
+.container__item .city,
+.container__item .company {
+    grid-column: span 1;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для строки с phone */
+.container__item .phone {
+    grid-column: span 2;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для строки с email */
+.container__item .email {
+    grid-column: span 2;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Место под фото (создаем через CSS) */
+.container__item::before {
+    content: '';
+    display: block;
+    grid-column: span 2; /* Охватывает обе колонки */
+    grid-row: 2; /* Помещает на вторую строку */
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0; /* Фон области под фото */
+    border-radius: 50%; /* Круглая форма */
+    background-image: url('https://via.placeholder.com/100'); /* Место для изображения */
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto; /* Центрируем круг в карточке */
+}
+
+/* Общие стили для иконок */
+.container__item > div i {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    color: #555; /* Цвет иконок */
+}
+
+/* Дополнительные стили для адаптации */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
+    }
+    .container__item {
+        grid-template-columns: 1fr; /* Содержимое карточек также в одну колонку */
+        text-align: left;
+    }
+    .container__item .username {
+        justify-content: flex-start; /* Выровнять текст по левому краю на мобильных */
+        text-align: left; /* Выравнивание текста внутри элемента */
+    }
+    .container__item::before {
+        margin: 0; /* Убираем центрирование на мобильных */
+    }
 }

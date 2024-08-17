@@ -5,25 +5,34 @@
 id, username, email, address.city, phone и company.name. Стили добавляем произвольно. 
 */
 
+let mainContainer = document.querySelector('.container');
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(result => result.json())
     .then(data => {
         console.table(data);
-        let container = document.createElement('div').classList.add('container');
         data.forEach(val => {
-            let id = document.createElement('div').classList.add('id');
-            id.co = val.id;
-            let username = document.createElement('div').classList.add('username');
-            username = val.username;
-            let email = document.createElement('div').classList.add('email');
+            let container = document.createElement('div');
+            container.classList.add('container__item');
+            container.append(
+                createElement('id', val.id),
+                createElement('username', val.username),
+                createElement('email', val.email),
+                createElement('city', val.address.city),
+                createElement('phone', val.phone),
+                createElement('company', val.company.name),
+            );
+            console.log(val);
+            mainContainer.append(container);
 
-            let city = document.createElement('div').classList.add('city');
-            let phone = document.createElement('div').classList.add('phone');
-            let company = document.createElement('div').classList.add('company');
-            console.log(val.id);
         });
     })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
 
-    function createElement(nameElement){
-
-    }
+    function createElement(nameElement, valueElement) {
+            let element = document.createElement('div');
+            element.classList.add(nameElement);
+            element.textContent = valueElement;
+            return element;
+        }
