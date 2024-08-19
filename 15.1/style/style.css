@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Old CSS */
+body {
+  background-color: #333331;
+}
+
+.todo {
+  max-width: 428px;
+  background: white;
+  border-radius: 8px;
+  padding: 24px 16px 16px 16px;
+  margin: 5% auto;
+  position: relative;
+}
+
+.main-header {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.header__group-subheader {
+  font-size: 15px;
+}
+
+.search-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*     display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  width: 100%;
+  height: 48px;
+  border-radius: 28px;
+  background-color: rgba(103, 80, 164, 0.05);
+  padding: 0 16px;
+  margin: 16px 0;
+}
+.search-field__input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 24px;
+}
+.search-field__icon {
+  color: #49454f;
+}
+
+.float-button {
+  /* ПОМЕНЯТЬ НА ФИКСЕД В САМОМ КОНЦЕ */
+  position: absolute;
+  background-color: #EBDEF7;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  width: 56px;
+  height: 56px;
+  border: none;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.float-button span {
+  color: #1f182a;
+  cursor: pointer;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.split-button {
+  width: 100%;
+  height: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #79747e;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.todo-title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.split-button__button {
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #ffffff;
+  transition: all 0.15s linear;
+  padding: 10px 12px;
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.split-button__button-icon {
+  width: 0;
+  overflow: hidden;
+  transition: all 0.15s linear;
+  color: #381e72 !important;
+  font-size: 18px !important;
+}
+
+.split-button__button--center {
+  border-left: 1px solid #79747e;
+  border-right: 1px solid #79747e;
+}
+
+.split-button__button--active {
+  background-color: #EBDEF7;
+}
+
+.split-button__button--active .split-button__button-icon {
+  width: 18px;
+}
+
+.checkbox {
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+
+.checkbox input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #49454f;
+  border-radius: 2px;
+  transition: all 0.15s linear;
+  cursor: pointer;
+  outline: none;
+}
+
+.checkbox input[type=checkbox]:checked {
+  background-color: #EBDEF7;
+  border-color: #EBDEF7;
+}
+
+.checkbox:has(input[type=checkbox]:checked) .checkbox__check-icon {
+  opacity: 100%;
+}
+
+.checkbox__check-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-size: 20px !important;
+  color: #381e72;
+  transition: all 0.15s linear;
+  opacity: 0%;
+}
+
+.todo-block {
+  /*TODO MIXIN*/
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 8px;
+  background-color: rgba(103, 80, 164, 0.05);
+  border-radius: 16px;
+  min-height: 62px;
+}
+.todo-block:has(input[type=checkbox]:checked) > .todo-block__data {
+  text-decoration: line-through;
+  color: rgba(29, 27, 30, 0.5) !important;
+}
+.todo-block__date {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: inherit;
+}
+.todo-block__title {
+  font-size: 16px;
+  font-weight: 400;
+  color: inherit;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: rgba(103, 80, 164, 0.05);
+  margin: 16px 0;
+}
+
+.create-form__input {
+  height: 56px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  background: none;
+  outline: none;
+  transition: all 0.15s linear;
+  padding: 4px 16px;
+}
+
+.create-form__input:focus {
+  border: 2px solid #6750a4;
+}
+
+.form__buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  /* второй вариант поместить элементы вправо */
+  /* margin-left: auto; */
+}
+
+.form-button {
+  height: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.form-button--primary {
+  color: #ffffff;
+  background-color: #6750a4;
+  border: 1px solid #6750a4;
+}
+
+.form-button--secondary {
+  color: #6750a4;
+  background-color: #ffffff;
+  border: 1px solid #6750a4;
+}/*# sourceMappingURL=style.css.map */

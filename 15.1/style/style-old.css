@@ -1,31 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-}
 
-:root {
-    --main-accent-color: rgba(103, 80, 164, 0.05);
-    --main-bg-color: #ffffff;
-    --second-accent-color: #EBDEF7;
-    --second-effect-color: #6750a4;
-}
 
 body {
     background-color: #333331;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
 
 .todo {
     max-width: 428px;
