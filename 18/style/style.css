@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* 1
+HTML, CSS, JavaScript: домашние задание 18 morning
+Задание 1
+Создать адаптивный контейнер для содержимого на веб-странице. 
+Создайте переменную, представляющую ширину контейнера, 
+необходимо установить разную ширину контейнера в зависимости от размера экрана устройства. 
+Изначальная ширина контейнера 960px, если ширина экрана меньше 768px, 
+то ширина контейнера должна быть равна 100%.
+Задание 2 
+Создать миксин для установки стилей кнопки.
+Требования:
+Создайте миксин с именем button-styles, который принимает два аргумента: background-color и color.
+Используйте аргументы миксина для установки соответствующих стилей кнопки.
+Примените миксин к кнопке с классом .button. 
+*/
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.button {
+  background-color: #db349b;
+  color: #683838;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #bb2180;
+}/*# sourceMappingURL=style.css.map */
