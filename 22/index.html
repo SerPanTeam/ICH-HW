@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW22</title>
+  </head>
+  <body></body>
+  <script>
+    // Создать функцию, которая будет изменять цвет фона элемента каждую секунду.
+    // Цвет должен меняться случайным образом из заданного набора цветов.
+    let colors = ["#ff0000", "#00ff00", "#0000ff", "#f000ff", "#0f00ff", "#00f0ff", "#000fff", "#ff00ff"];
+    setInterval(() => {
+      let color = colors[Math.floor(Math.random() * colors.length)];
+      console.log(color);
+      document.body.style.backgroundColor = color;
+    }, 1000);
+  </script>
+</html>
