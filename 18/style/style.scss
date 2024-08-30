@@ -3,30 +3,32 @@ HTML, CSS, JavaScript: домашние задание 18 morning
 Задание 1
 Создать адаптивный контейнер для содержимого на веб-странице. 
 Создайте переменную, представляющую ширину контейнера, 
-необходимо установить разную ширину контейнера в зависимости от размера экрана устройства. 
+необходимо установить разную ширину контейнера в зависимости 
+от размера экрана устройства. 
 Изначальная ширина контейнера 960px, если ширина экрана меньше 768px, 
 то ширина контейнера должна быть равна 100%.
 Задание 2 
 Создать миксин для установки стилей кнопки.
 Требования:
-Создайте миксин с именем button-styles, который принимает два аргумента: background-color и color.
-Используйте аргументы миксина для установки соответствующих стилей кнопки.
+Создайте миксин с именем button-styles, который принимает 
+два аргумента: background-color и color.
+Используйте аргументы миксина для установки соответствующих 
+стилей кнопки.
 Примените миксин к кнопке с классом .button. 
 */
-// Переменная для ширины контейнера
 $container-width: 960px;
 
-// Адаптивный контейнер
 .container {
     width: $container-width;
     margin: 0 auto;
+    background-color: antiquewhite;
+    padding: 10px;
 
     @media (max-width: 768px) {
         width: 100%;
     }
 }
 
-// Миксин для стилизации кнопки
 @mixin button-styles($background-color, $color) {
     background-color: $background-color;
     color: $color;
@@ -35,14 +37,11 @@ $container-width: 960px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
-
     &:hover {
         background-color: darken($background-color, 10%);
     }
 }
 
-// Применение миксина к кнопке с классом .button
 .button {
-    @include button-styles(#db349b, #683838); // Пример использования миксина с передачей аргументов
+    @include button-styles(#db349b, #683838);
 }
