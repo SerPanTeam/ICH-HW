@@ -29,7 +29,7 @@ if (btnRegistr)
             (checkValue({ field: 'emailField', min: 2, requiredSymbol: '@' })),
             (checkValue({ field: 'telField', min: 8, max: 12, onlyDigit: true, requiredSymbol: '+', positionOfRequiredSymbol: 0 }))
         ];
-
+        
         if (validations.every(val => val === true)) {
             document.querySelector('.container').style.display = 'none';
             document.body.appendChild(document.createElement('h2')).textContent = "Регистрация выполнена успешно!";
@@ -38,7 +38,7 @@ if (btnRegistr)
             const password = document.querySelector('#passwordField').value;
             localStorage.setItem(login, password);
         }
-
+        
 
     });
 
