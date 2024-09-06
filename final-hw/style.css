@@ -1,0 +1,111 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Модальное окно */
+.modal {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Слайдер */
+.frame {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+}
+
+.cards {
+    display: flex;
+    transition: left 0.5s ease;
+    position: relative;
+    left: 0;
+}
+
+.card {
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.rounds {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rounds button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.rounds .active {
+    background-color: #555;
+}
+
+.triggers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.triggers button {
+    font-size: 20px;
+}
+
+/* Меню с подпунктами */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+}
+
+.submenu.visible {
+    display: block;
+}
+
+/* Всплывающие уведомления */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+}
+
+.notification {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.notification .close-btn {
+    cursor: pointer;
+    float: right;
+}

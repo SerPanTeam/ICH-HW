@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект с домашними заданиями</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Модальное окно -->
+    <button id="openButton">Открыть модальное окно</button>
+    <dialog class="modal" id="modal">
+        <div class="modal-header">Модальное окно</div>
+        <button id="closeButton">Закрыть</button>
+    </dialog>
+
+    <!-- Слайдер -->
+    <div id="slider">
+        <div class="frame">
+            <div class="cards" id="cards">
+                <div class="card" style="background-image: url('https://artworld.ru/images/cms/content/catalog2/kartina_v_interier_pejzazh_maslom_v_lesnoj_tishi_ki200106.jpg');"></div>
+                <div class="card" style="background-image: url('https://ar.culture.ru/attachments/attachment/preview/5d318a999679aa1b2cd218f6-preview.jpg');"></div>
+                <div class="card" style="background-image: url('https://oir.mobi/uploads/posts/2021-05/1622284149_33-oir_mobi-p-prostoi-peizazh-priroda-krasivo-foto-38.jpg');"></div>
+            </div>
+        </div>
+        <div class="rounds" id="rounds"></div>
+        <div class="triggers">
+            <button id="left-btn">&lt;</button>
+            <button id="right-btn">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Меню с подпунктами -->
+    <nav>
+        <ul class="menu">
+            <li class="menu-item">Главный пункт
+                <ul class="submenu">
+                    <li>Подпункт 1</li>
+                    <li>Подпункт 2</li>
+                </ul>
+            </li>
+            <li class="menu-item">Еще пункт
+                <ul class="submenu">
+                    <li>Подпункт 3</li>
+                    <li>Подпункт 4</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Всплывающие уведомления -->
+    <form id="orderForm">
+        <input type="text" placeholder="Адрес" required>
+        <input type="text" placeholder="Цена" required>
+        <input type="text" placeholder="Получатель" required>
+        <button type="submit">Создать заказ</button>
+    </form>
+    <div class="buttons buttons--hidden" id="buttons">
+        <button id="buttonPaid">Заказ оплачен</button>
+        <button id="buttonSent">Заказ отправлен</button>
+        <button id="buttonGet">Заказ получен</button>
+    </div>
+    <div class="notifications-container" id="notificationsContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
